@@ -20,9 +20,10 @@ class CreditPackageController {
         select: ['id', 'name', 'credit_amount', 'price']
       })
       res.status(200).json({
-        status: 'success',
-        data: creditPackage
-      })
+      status: 'success',
+      data: creditPackage,
+      total: creditPackage.length
+    })
     } catch (error) {
       logger.error(error)
       next(error)
